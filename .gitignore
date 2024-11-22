@@ -1,0 +1,14 @@
+# Ignorar carpetas de exportación y configuraciones de exportación
+/export/
+
+# Ignorar archivos de proyecto de Godot generados por el motor
+/.import/
+/.idea/
+/.vscode/
+
+# Ignorar archivos de configuración del motor de Godot
+export.cfg
+
+# Archivos de cache y configuración de Godot
+/.godot/
+debug/
