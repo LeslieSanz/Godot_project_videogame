@@ -54,8 +54,6 @@ func shoot():
 
 
 func _on_Area2D_area_entered(area):
-	if area.is_in_group("asteroid"):
-		print("asteroid crash")
+	if area.is_in_group("enemy"):
+		Global.vidas -= 1
 		
-	elif area.is_in_group("enemyShip"):
-		print("enemyShip crash")
