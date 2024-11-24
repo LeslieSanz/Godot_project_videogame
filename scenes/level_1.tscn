@@ -55,8 +55,8 @@ stream = ExtResource( 1 )
 motion_mirroring = Vector2( 795, 0 )
 
 [node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 398.471, 246.981 )
-scale = Vector2( 0.414323, 0.455218 )
+position = Vector2( 398.471, 250.664 )
+scale = Vector2( 0.414323, 0.462039 )
 texture = ExtResource( 4 )
 
 [node name="hud" type="Node2D" parent="."]

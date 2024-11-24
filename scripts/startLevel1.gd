@@ -1,9 +1,9 @@
 extends Control
 
 var dialog = [
-	'¡Es increíble estar aquí! Todo este laboratorio es como algo sacado de un sueño… y esta nave… no puedo creer que realmente pueda viajar en el tiempo.',
-	'Los científicos me dijeron que mi misión es crucial: debo usar esta nave para regresar al pasado y presenciar los momentos más importantes de la independencia del Perú. Pero no será solo observar… para volver a mi tiempo, debo completar tres misiones clave y asegurar que la historia siga su curso.',
-	'Es un desafío enorme, pero también la aventura de mi vida. ¡Es hora de activar esta nave y cambiar la historia desde adentro!'
+	'Estoy en 1780… en el corazón del Valle del Cusco. Aquí, entre estas montañas, Túpac Amaru II ha iniciado una rebelión contra el dominio español. Su lucha no es solo por él, sino por su pueblo, por la justicia y por la libertad de los oprimidos.',
+	'El levantamiento ha inspirado a miles de personas a unirse a su causa, pero el ejército español no se detendrá hasta aplastarlo. Ellos tienen armas, soldados bien entrenados y una brutal determinación.',
+	'No será fácil, pero no puedo quedarme de brazos cruzados. Si quiero regresar a mi tiempo, debo ayudar a Túpac Amaru y a su gente a resistir. ¡Vamos, es hora de luchar por la libertad de este pueblo valiente!'
 ]
 
 var dialog_images = [
@@ -18,7 +18,7 @@ var iniciobutton = false
 var text_speed = 0.01
 
 #variable de cambio de escena
-var change_scene = preload("res://scenes/startLevel1.tscn")
+var change_scene = preload("res://scenes/level_1.tscn")
 
 func _ready():
 	$descripcion.text = ''
