@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/sprites/personaje1.png" type="Texture" id=1]
+[ext_resource path="res://assets/backgrounds/start.png" type="Texture" id=2]
+[ext_resource path="res://fuentetexto.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/sprites/boton.png" type="Texture" id=4]
+[ext_resource path="res://scripts/start.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=2]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 749.718, 446.695 ), Vector2( 755, 446.695 ) ]
+}
+
+[node name="start" type="Control"]
+pause_mode = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 74.0
+margin_bottom = 3.05176e-05
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 28.0
+margin_top = 252.958
+margin_right = 111.0
+margin_bottom = 392.958
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 390.0
+margin_right = 780.0
+margin_bottom = 480.0
+color = Color( 0.576471, 0.690196, 0.756863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 28.0
+margin_top = 375.775
+margin_right = 111.0
+margin_bottom = 402.775
+color = Color( 0.0980392, 0.137255, 0.223529, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="name" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 28.0
+margin_top = 382.693
+margin_right = 111.0
+margin_bottom = 396.693
+text = "Name"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="descripcion" type="Label" parent="."]
+margin_left = 30.0
+margin_top = 412.685
+margin_right = 770.0
+margin_bottom = 456.685
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "hola como estas"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="next" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.97
+anchor_top = 0.949
+anchor_right = 0.97
+anchor_bottom = 0.949
+margin_left = 751.049
+margin_top = 446.695
+margin_right = 777.049
+margin_bottom = 474.695
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="next"]
+autoplay = "texto"
+anims/texto = SubResource( 2 )
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
