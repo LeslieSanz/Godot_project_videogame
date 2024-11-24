@@ -5,7 +5,7 @@
 
 [node name="main" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="background" type="ColorRect" parent="."]
 margin_right = 796.0
 margin_bottom = 496.0
 color = Color( 0, 0, 0, 1 )
@@ -13,6 +13,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+[node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 118.433, 85.6746 )
 script = ExtResource( 2 )
