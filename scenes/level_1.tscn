@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/level_1.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 397.965, 11.242 )
+
+[node name="level_1" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="background" type="ColorRect" parent="."]
+margin_right = 796.0
+margin_bottom = 496.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 119.522, 98.2474 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="limits" type="Node2D" parent="."]
+
+[node name="top_limit" type="StaticBody2D" parent="limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limits/top_limit"]
+position = Vector2( 398.787, 4.24744 )
+shape = SubResource( 1 )
+
+[node name=" bottom_limit" type="StaticBody2D" parent="limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limits/ bottom_limit"]
+position = Vector2( 397.843, 494.118 )
+shape = SubResource( 1 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

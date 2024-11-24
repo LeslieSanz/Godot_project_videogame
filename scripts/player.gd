@@ -50,3 +50,11 @@ func shoot():
 		# Reanudar disparo después de 1 segundo
 		yield(get_tree().create_timer(1), "timeout")
 		readyToShoot = true
+
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("asteroid"):
+		print("asteroid crash")
+		
+	elif area.is_in_group("enemyShip"):
+		print("enemyShip crash")
