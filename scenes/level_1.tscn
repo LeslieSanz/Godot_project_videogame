@@ -1,18 +1,25 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://sounds/explosion.wav" type="AudioStream" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/level_1.gd" type="Script" id=3]
 [ext_resource path="res://assets/backgrounds/rotonda.png" type="Texture" id=4]
+[ext_resource path="res://fonts/ARCADE_R.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/ui/ban_vidas.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/ban.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 397.965, 11.242 )
+
+[sub_resource type="DynamicFont" id=2]
+use_filter = true
+font_data = ExtResource( 5 )
 
 [node name="level_1" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 119.522, 98.2474 )
+position = Vector2( 118.106, 201.602 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -42,7 +49,65 @@ stream = ExtResource( 1 )
 motion_mirroring = Vector2( 795, 0 )
 
 [node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 399.415, 247.925 )
+position = Vector2( 398.471, 246.981 )
 scale = Vector2( 0.414323, 0.455218 )
 texture = ExtResource( 4 )
+
+[node name="hud" type="Node2D" parent="."]
+
+[node name="tablerito" type="Sprite" parent="hud"]
+position = Vector2( 635.334, 60.3754 )
+scale = Vector2( 1.801, 1.38525 )
+texture = ExtResource( 7 )
+
+[node name="tablerito2" type="Sprite" parent="hud"]
+position = Vector2( 128.474, 64.3869 )
+scale = Vector2( 1.21538, 0.865324 )
+texture = ExtResource( 6 )
+
+[node name="puntos" type="Label" parent="hud"]
+margin_left = 576.081
+margin_top = 52.4822
+margin_right = 702.081
+margin_bottom = 93.4822
+custom_fonts/font = SubResource( 2 )
+text = "Puntos:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vidas" type="Label" parent="hud"]
+margin_left = 70.7152
+margin_top = 51.86
+margin_right = 196.715
+margin_bottom = 88.86
+custom_fonts/font = SubResource( 2 )
+text = "Vidas:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="puntosValor" type="Label" parent="hud"]
+margin_left = 689.439
+margin_top = 52.7194
+margin_right = 719.439
+margin_bottom = 74.7194
+custom_fonts/font = SubResource( 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="energiaValor" type="Label" parent="hud"]
+margin_left = 170.78
+margin_top = 51.7756
+margin_right = 200.78
+margin_bottom = 73.7756
+custom_fonts/font = SubResource( 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
