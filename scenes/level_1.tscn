@@ -56,8 +56,8 @@ texture = ExtResource( 4 )
 [node name="hud" type="Node2D" parent="."]
 
 [node name="tablerito" type="Sprite" parent="hud"]
-position = Vector2( 635.334, 60.3754 )
-scale = Vector2( 1.801, 1.38525 )
+position = Vector2( 642.885, 60.3754 )
+scale = Vector2( 1.93955, 1.38525 )
 texture = ExtResource( 7 )
 
 [node name="tablerito2" type="Sprite" parent="hud"]
@@ -90,9 +90,9 @@ __meta__ = {
 }
 
 [node name="puntosValor" type="Label" parent="hud"]
-margin_left = 689.439
+margin_left = 691.326
 margin_top = 52.7194
-margin_right = 719.439
+margin_right = 721.326
 margin_bottom = 74.7194
 custom_fonts/font = SubResource( 2 )
 text = "0"
@@ -100,7 +100,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="energiaValor" type="Label" parent="hud"]
+[node name="vidasValor" type="Label" parent="hud"]
 margin_left = 170.78
 margin_top = 51.7756
 margin_right = 200.78

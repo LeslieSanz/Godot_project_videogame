@@ -23,4 +23,8 @@ func _on_Timer_timeout():
 		asteroid.add_to_group("asteroid")
 
 func _physics_process(delta):
+	$hud/vidasValor.text = str(Global.vidas)
+	$hud/puntosValor.text = str(Global.puntos)
 	$ParallaxBackground/ParallaxLayer.motion_offset.x -= 5
+	
+	
