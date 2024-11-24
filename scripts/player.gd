@@ -47,6 +47,7 @@ func shoot():
 		# Bloquear disparo temporalmente
 		readyToShoot = false
 		
+		$sounds/laser.play()
 		# Reanudar disparo después de 1 segundo
 		yield(get_tree().create_timer(1), "timeout")
 		readyToShoot = true
