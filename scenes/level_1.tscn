@@ -116,13 +116,4 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="ColorRect" type="ColorRect" parent="hud"]
-margin_left = 453.0
-margin_top = 212.0
-margin_right = 717.0
-margin_bottom = 376.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
