@@ -1,9 +1,9 @@
 extends Control
 
 var dialog = [
-	'Estoy en 1780… en el corazón del Valle del Cusco. Aquí, entre estas montañas, Túpac Amaru II ha iniciado una rebelión contra el dominio español. Su lucha no es solo por él, sino por su pueblo, por la justicia y por la libertad de los oprimidos.',
-	'El levantamiento ha inspirado a miles de personas a unirse a su causa, pero el ejército español no se detendrá hasta aplastarlo. Ellos tienen armas, soldados bien entrenados y una brutal determinación.',
-	'No será fácil, pero no puedo quedarme de brazos cruzados. Si quiero regresar a mi tiempo, debo ayudar a Túpac Amaru y a su gente a resistir. ¡Vamos, es hora de luchar por la libertad de este pueblo valiente!'
+	'Ahora estoy en 1820, en la costa del Perú. La brisa del mar trae consigo no solo el aroma del océano, sino también la esperanza de libertad. Es aquí donde José de San Martín ha llegado con la Expedición Libertadora, decidido a terminar con el dominio colonial español.',
+	'San Martín y sus tropas enfrentan un desafío titánico: tomar posiciones estratégicas y preparar el terreno para la proclamación de la independencia. Pero los realistas no cederán sin luchar; harán todo lo posible por retomar el control.',
+	'No hay tiempo que perder. Debo unirme a los patriotas y asegurar que sus esfuerzos no sean en vano. Cada batalla ganada nos acerca un paso más a la libertad. ¡Es hora de luchar con valentía!'
 ]
 
 var dialog_images = [
@@ -18,7 +18,7 @@ var iniciobutton = false
 var text_speed = 0.01
 
 #variable de cambio de escena
-var change_scene = preload("res://scenes/startLevel2.tscn")
+var change_scene = preload("res://scenes/startLevel3.tscn")
 
 func _ready():
 	$descripcion.text = ''
@@ -62,6 +62,13 @@ func load_dialog():
 	else:
 		queue_free()
 	dialog_index+=1
+	
+	
+
+#cambio de scena
+func _on_Button_pressed():
+	get_tree().change_scene_to(change_scene)
+	pass # Replace with function body.
 
 
 func _on_Tween_tween_completed(object, key):
@@ -70,8 +77,3 @@ func _on_Tween_tween_completed(object, key):
 		finished = false
 	else:
 		finished = true
-
-#cambio de scena
-func _on_Button_pressed():
-	get_tree().change_scene_to(change_scene)
-	pass # Replace with function body.

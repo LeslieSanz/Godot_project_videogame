@@ -114,7 +114,6 @@ margin_right = 770.0
 margin_bottom = 456.685
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0.0784314, 0.156863, 0.176471, 1 )
-text = "hola como estas"
 align = 1
 autowrap = true
 __meta__ = {
