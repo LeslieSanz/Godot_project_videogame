@@ -6,12 +6,19 @@ var dialog = [
 	'Es un desafío enorme, pero también la aventura de mi vida. ¡Es hora de activar esta nave y cambiar la historia desde adentro!'
 ]
 
+var dialog_images = [
+	preload("res://assets/sprites/personaje1.png"),  # Imagen para el primer diálogo
+	preload("res://assets/sprites/personaje2.png"),  # Imagen para el segundo diálogo
+	preload("res://assets/sprites/personaje3.png")   # Imagen para el tercer diálogo
+]
+
 var dialog_index = 0
 var finished = false
 var text_speed = 0.01
 
 func _ready():
 	$descripcion.text = ''
+	$TextureRect2.texture = null
 	load_dialog()
 
 func _process(delta):
@@ -22,8 +29,15 @@ func _process(delta):
 func load_dialog():
 	if dialog_index < dialog.size():
 		finished = false
+		
+		# Cambiar texto
 		$descripcion.text = dialog[dialog_index]
 		$descripcion.percent_visible = 0
+		
+		# Cambiar imagen
+		$TextureRect2.texture = dialog_images[dialog_index]
+		
+		# Configurar el tween para mostrar el texto progresivamente
 		var tween_duration = text_speed * dialog[dialog_index].length()
 		$Tween.interpolate_property(
 			$descripcion, "percent_visible", 0,1,tween_duration,
