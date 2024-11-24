@@ -22,3 +22,5 @@ func _on_Timer_timeout():
 		asteroid.position.y = round(rand_range(0,500))
 		asteroid.add_to_group("asteroid")
 
+func _physics_process(delta):
+	$ParallaxBackground/ParallaxLayer.motion_offset.x -= 5
