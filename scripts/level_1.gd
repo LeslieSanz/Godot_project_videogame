@@ -2,8 +2,7 @@ extends Node2D
 
 var pre_enemyShip = preload("res://scenes/enemyShip.tscn")
 var pre_asteroid = preload("res://scenes/asteroid.tscn")
-func _ready():
-	pass 
+
 
 func _on_Timer_timeout():
 	
@@ -27,4 +26,5 @@ func _physics_process(delta):
 	$hud/puntosValor.text = str(Global.puntos)
 	$ParallaxBackground/ParallaxLayer.motion_offset.x -= 5
 	
-	
+func _ready():
+	$music/level_1_music.play()

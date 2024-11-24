@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/sprites/boton.png" type="Texture" id=4]
 [ext_resource path="res://scripts/start.gd" type="Script" id=5]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rect_position")
@@ -121,5 +121,5 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="next"]
 autoplay = "texto"
-anims/texto = SubResource( 2 )
+anims/texto = SubResource( 1 )
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
