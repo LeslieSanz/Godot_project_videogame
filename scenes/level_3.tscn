@@ -4,17 +4,14 @@
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/level_3.gd" type="Script" id=3]
 [ext_resource path="res://assets/backgrounds/escenalevel3.png" type="Texture" id=4]
-[ext_resource path="res://fonts/ARCADE_R.TTF" type="DynamicFontData" id=5]
-[ext_resource path="res://assets/ui/ban_vidas.png" type="Texture" id=6]
-[ext_resource path="res://assets/ui/ban.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/tablero1.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/VIDA5.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/tablero2.png" type="Texture" id=7]
 [ext_resource path="res://sounds/Sinfona_peruana.wav" type="AudioStream" id=8]
+[ext_resource path="res://fuentetexto.tres" type="DynamicFont" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 397.965, 11.242 )
-
-[sub_resource type="DynamicFont" id=2]
-use_filter = true
-font_data = ExtResource( 5 )
 
 [node name="level_3" type="Node2D"]
 script = ExtResource( 3 )
@@ -61,56 +58,67 @@ texture = ExtResource( 4 )
 [node name="hud" type="Node2D" parent="."]
 
 [node name="tablerito" type="Sprite" parent="hud"]
-position = Vector2( 642.885, 60.3754 )
-scale = Vector2( 1.93955, 1.38525 )
+position = Vector2( 700.155, 40.8265 )
+scale = Vector2( 0.622994, 0.44531 )
 texture = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="tablerito3" type="Sprite" parent="hud"]
+position = Vector2( 92.8072, 467.006 )
+scale = Vector2( 0.539898, 0.44531 )
+texture = ExtResource( 5 )
 
 [node name="tablerito2" type="Sprite" parent="hud"]
-position = Vector2( 128.474, 64.3869 )
-scale = Vector2( 1.21538, 0.865324 )
+position = Vector2( 139.956, 33.5932 )
+scale = Vector2( 0.391914, 0.348235 )
 texture = ExtResource( 6 )
 
 [node name="puntos" type="Label" parent="hud"]
-margin_left = 576.081
-margin_top = 52.4822
-margin_right = 702.081
-margin_bottom = 93.4822
-custom_fonts/font = SubResource( 2 )
+margin_left = 645.715
+margin_top = 30.4949
+margin_right = 714.715
+margin_bottom = 69.4949
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Puntos:
 "
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="vidas" type="Label" parent="hud"]
-margin_left = 70.7152
-margin_top = 51.86
-margin_right = 196.715
-margin_bottom = 88.86
-custom_fonts/font = SubResource( 2 )
-text = "Vidas:
-"
+[node name="nivel" type="Label" parent="hud"]
+margin_left = 61.3353
+margin_top = 456.674
+margin_right = 130.335
+margin_bottom = 495.674
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "NIVEL 3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="puntosValor" type="Label" parent="hud"]
-margin_left = 691.326
-margin_top = 52.7194
-margin_right = 721.326
-margin_bottom = 74.7194
-custom_fonts/font = SubResource( 2 )
+margin_left = 709.306
+margin_top = 30.9939
+margin_right = 739.306
+margin_bottom = 52.9939
+custom_fonts/font = ExtResource( 9 )
 text = "0"
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="vidasValor" type="Label" parent="hud"]
-margin_left = 170.78
-margin_top = 51.7756
-margin_right = 200.78
-margin_bottom = 73.7756
-custom_fonts/font = SubResource( 2 )
+margin_left = 148.0
+margin_top = 25.0
+margin_right = 161.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 9 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false

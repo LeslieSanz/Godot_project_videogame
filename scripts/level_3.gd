@@ -3,14 +3,22 @@ extends Node2D
 var pre_enemyArmy = preload("res://scenes/enemies/soldier.tscn")
 var pre_canyon = preload("res://scenes/enemies/canyon.tscn")
 
-var total_enemies = 5  # Número total de enemigos
+var total_enemies = 10  # Número total de enemigos
 var enemies_spawned = 0  # Enemigos generados
 var enemies_defeated = 0  # Enemigos derrotados
+var dialog_index = 0
 
 # Escena de victoria y derrota
 var victory_scene = preload("res://scenes/startLevel3.tscn")
 var defeat_scene = preload("res://scenes/start.tscn")  
 
+var images_vida = [
+	preload("res://assets/ui/VIDA1.png"),  
+	preload("res://assets/ui/VIDA2.png"),  
+	preload("res://assets/ui/VIDA3.png"),  
+	preload("res://assets/ui/VIDA4.png"),  
+	preload("res://assets/ui/VIDA5.png")    
+]
 
 #genera enemigos
 func _on_Timer_timeout():
@@ -37,6 +45,8 @@ func _on_Timer_timeout():
 func _physics_process(delta):
 	$hud/vidasValor.text = str(Global.vidas)
 	$hud/puntosValor.text = str(Global.puntos)
+	# Cambiar imagen
+	$hud/tablerito2.texture = images_vida[Global.vidas-1]
 	$ParallaxBackground/ParallaxLayer.motion_offset.x -= 5
 	
 	# Verifica si el jugador ha derrotado a todos los enemigos
@@ -49,6 +59,7 @@ func _physics_process(delta):
 	
 func _ready():
 	$music/level_2_music.play()
+	$hud/tablerito2.texture = null
 	
 func win_game():
 	# Cambiar a la escena de victoria
