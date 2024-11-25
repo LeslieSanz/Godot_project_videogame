@@ -38,7 +38,7 @@ position = Vector2( 556.199, 116.621 )
 scale = Vector2( 0.0993626, 0.115574 )
 
 [node name="sprite" type="Sprite" parent="."]
-position = Vector2( 910.28, 263.299 )
+position = Vector2( 66.5976, 199.871 )
 scale = Vector2( 0.0993626, 0.115574 )
 texture = ExtResource( 1 )
 

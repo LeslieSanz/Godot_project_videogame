@@ -61,7 +61,9 @@ func shoot():
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("enemy"):  # Si el área pertenece al grupo "enemy"
 		$sounds/shipImpact.play()
-		Global.vidas -= 1  # Reduce una vida
+		if Global.vidas > 0:
+			Global.vidas -= 1
 	elif area.is_in_group("bullet2"):  # Si el área pertenece al grupo "bullet2"
 		$sounds/shipImpact.play()
-		Global.vidas -= 1  # Reduce una vida
+		if Global.vidas > 0:
+			Global.vidas -= 1
