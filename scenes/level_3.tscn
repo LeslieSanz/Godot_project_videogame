@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://sounds/explosion.wav" type="AudioStream" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
@@ -12,6 +12,23 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 397.965, 11.242 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "mensaje"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -149.003, 217.556 ), Vector2( 650.997, 217.556 ) ]
+}
 
 [node name="level_3" type="Node2D"]
 script = ExtResource( 3 )
@@ -88,6 +105,25 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="hud"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.003
+margin_top = 217.556
+margin_right = 149.001
+margin_bottom = 256.556
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hud/Label"]
+autoplay = "mensaje"
+anims/mensaje = SubResource( 2 )
 
 [node name="nivel" type="Label" parent="hud"]
 margin_left = 61.3353
