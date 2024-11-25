@@ -1,16 +1,29 @@
 extends Node2D
 
+var pre_enemyArmy = preload("res://scenes/enemies/soldier.tscn")
+var pre_canyon = preload("res://scenes/enemies/canyon.tscn")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+#genera enemigos
+func _on_Timer_timeout():
+	randomize()
+	var randomEnemy = round(rand_range(1,2))
+	
+	if randomEnemy == 1:
+		var enemyArmy = pre_enemyArmy.instance()
+		self.call_deferred("add_child",enemyArmy)
+		enemyArmy.position.y = round(rand_range(0,400))
+		enemyArmy.add_to_group("enemyArmy")
+		
+	if randomEnemy == 2:
+		var canyon = pre_canyon.instance()
+		self.call_deferred("add_child",canyon)
+		canyon.position.y = round(rand_range(0,450))
+		canyon.add_to_group("canyon")
 
-
-# Called when the node enters the scene tree for the first time.
+func _physics_process(delta):
+	$hud/vidasValor.text = str(Global.vidas)
+	$hud/puntosValor.text = str(Global.puntos)
+	$ParallaxBackground/ParallaxLayer.motion_offset.x -= 5
+	
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	$music/level_2_music.play()

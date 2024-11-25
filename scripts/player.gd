@@ -6,6 +6,8 @@ var readyToShoot = true
 
 var pre_bullet = preload("res://scenes/bullet.tscn")
 
+const SCREEN_SIZE = Vector2(800, 500)  # Tamaño de la pantalla
+
 func _physics_process(delta):
 	# Movimiento hacia abajo (tecla ↓)
 	if Input.is_action_pressed("ui_down"):  # "ui_down" es la tecla de flecha hacia abajo
@@ -35,6 +37,10 @@ func _physics_process(delta):
 	# Movimiento y deslizamiento
 	move_and_slide(velocity)
 	
+	# Mantener dentro de la pantalla
+	position.x = clamp(position.x, 0, SCREEN_SIZE.x)
+	position.y = clamp(position.y, 0, SCREEN_SIZE.y)
+
 func shoot():
 	if readyToShoot:
 		# Instanciar la bala
@@ -51,7 +57,6 @@ func shoot():
 		# Reanudar disparo después de 1 segundo
 		yield(get_tree().create_timer(1), "timeout")
 		readyToShoot = true
-
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("enemy"):

@@ -7,7 +7,7 @@
 [ext_resource path="res://fonts/ARCADE_R.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/ui/ban_vidas.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/ban.png" type="Texture" id=7]
-[ext_resource path="res://sounds/condor_pasa.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds/Sinfona_peruana.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 397.965, 11.242 )
@@ -41,7 +41,7 @@ shape = SubResource( 1 )
 
 [node name="music" type="Node2D" parent="."]
 
-[node name="level_1_music" type="AudioStreamPlayer" parent="music"]
+[node name="level_2_music" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource( 8 )
 
 [node name="sounds" type="Node2D" parent="."]
@@ -52,10 +52,10 @@ stream = ExtResource( 1 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 902, 0 )
+motion_mirroring = Vector2( 828, 0 )
 
 [node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 451, 250 )
+position = Vector2( 457.357, 250 )
 texture = ExtResource( 4 )
 
 [node name="hud" type="Node2D" parent="."]
