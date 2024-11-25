@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://sounds/explosion.wav" type="AudioStream" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/level_3.gd" type="Script" id=3]
 [ext_resource path="res://assets/backgrounds/escenalevel3.png" type="Texture" id=4]
 [ext_resource path="res://fonts/ARCADE_R.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/ui/ban_vidas.png" type="Texture" id=6]
@@ -16,6 +17,7 @@ use_filter = true
 font_data = ExtResource( 5 )
 
 [node name="level_3" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 118.106, 201.602 )
