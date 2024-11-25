@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/sprites/personaje1.png" type="Texture" id=1]
 [ext_resource path="res://assets/backgrounds/start.png" type="Texture" id=2]
@@ -24,9 +24,8 @@ tracks/0/keys = {
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-[sub_resource type="StyleBoxEmpty" id=3]
-
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
+resource_name = "button"
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -61,9 +60,9 @@ __meta__ = {
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 margin_left = 28.0
-margin_top = 254.017
+margin_top = 252.958
 margin_right = 111.0
-margin_bottom = 394.017
+margin_bottom = 392.958
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -115,6 +114,7 @@ margin_right = 770.0
 margin_bottom = 456.685
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "hola como estas"
 align = 1
 autowrap = true
 __meta__ = {
@@ -149,8 +149,7 @@ margin_left = 336.0
 margin_top = 450.0
 margin_right = 474.0
 margin_bottom = 505.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 2 )
 icon = ExtResource( 6 )
 expand_icon = true
 __meta__ = {
@@ -175,6 +174,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Button"]
 autoplay = "button"
-anims/button = SubResource( 4 )
+anims/button = SubResource( 3 )
+
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

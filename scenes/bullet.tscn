@@ -1,11 +1,21 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scripts/bullet.gd" type="Script" id=1]
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody2D
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.6191, 4.35472 )
+func _physics_process(delta):
+	position.x += 10
+
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group((\"enemy\")):
+		queue_free()
+"
 
 [sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 9.6191, 4.35472 )
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 9.56638, 3.3165 )
 
 [node name="bullet" type="Node2D"]
@@ -13,7 +23,7 @@ extents = Vector2( 9.56638, 3.3165 )
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 collision_layer = 2147483650
 collision_mask = 2
-script = ExtResource( 1 )
+script = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="KinematicBody2D"]
 margin_right = 16.0
@@ -25,7 +35,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 position = Vector2( 7.83779, 2.57952 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="KinematicBody2D" groups=[
 "bullet",
@@ -35,5 +45,6 @@ shape = SubResource( 1 )
 "bullet",
 ]]
 position = Vector2( 7.81299, 2.67874 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
+
 [connection signal="area_entered" from="KinematicBody2D/Area2D" to="KinematicBody2D" method="_on_Area2D_area_entered"]

@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://sounds/explosion.wav" type="AudioStream" id=1]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/level_2.gd" type="Script" id=3]
+[ext_resource path="res://assets/nivel2IMG/paisaje4.png" type="Texture" id=4]
+[ext_resource path="res://fonts/ARCADE_R.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/ui/ban_vidas.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/ban.png" type="Texture" id=7]
+[ext_resource path="res://assets/AudioLVL2/TRACK1.mp3" type="AudioStream" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 397.965, 11.242 )
+
+[sub_resource type="DynamicFont" id=2]
+use_filter = true
+font_data = ExtResource( 5 )
+
+[node name="level_2" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 118.106, 201.602 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="limits" type="Node2D" parent="."]
+
+[node name="top_limit" type="StaticBody2D" parent="limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limits/top_limit"]
+position = Vector2( 398.787, 4.24744 )
+shape = SubResource( 1 )
+
+[node name=" bottom_limit" type="StaticBody2D" parent="limits"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="limits/ bottom_limit"]
+position = Vector2( 403.182, 487.444 )
+shape = SubResource( 1 )
+
+[node name="music" type="Node2D" parent="."]
+
+[node name="level_1_music" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource( 8 )
+
+[node name="sounds" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sounds"]
+stream = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 800, 0 )
+
+[node name="background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 401.966, 250 )
+scale = Vector2( 0.930477, 1 )
+texture = ExtResource( 4 )
+
+[node name="hud" type="Node2D" parent="."]
+
+[node name="tablerito" type="Sprite" parent="hud"]
+position = Vector2( 642.885, 60.3754 )
+scale = Vector2( 1.93955, 1.38525 )
+texture = ExtResource( 7 )
+
+[node name="tablerito2" type="Sprite" parent="hud"]
+position = Vector2( 128.474, 64.3869 )
+scale = Vector2( 1.21538, 0.865324 )
+texture = ExtResource( 6 )
+
+[node name="puntos" type="Label" parent="hud"]
+margin_left = 576.081
+margin_top = 52.4822
+margin_right = 702.081
+margin_bottom = 93.4822
+custom_fonts/font = SubResource( 2 )
+text = "Puntos:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vidas" type="Label" parent="hud"]
+margin_left = 70.7152
+margin_top = 51.86
+margin_right = 196.715
+margin_bottom = 88.86
+custom_fonts/font = SubResource( 2 )
+text = "Vidas:
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="puntosValor" type="Label" parent="hud"]
+margin_left = 691.326
+margin_top = 52.7194
+margin_right = 721.326
+margin_bottom = 74.7194
+custom_fonts/font = SubResource( 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vidasValor" type="Label" parent="hud"]
+margin_left = 170.78
+margin_top = 51.7756
+margin_right = 200.78
+margin_bottom = 73.7756
+custom_fonts/font = SubResource( 2 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
