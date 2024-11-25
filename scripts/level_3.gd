@@ -9,8 +9,8 @@ var enemies_defeated = 0  # Enemigos derrotados
 var dialog_index = 0
 
 # Escena de victoria y derrota
-var victory_scene = preload("res://scenes/startLevel3.tscn")
-var defeat_scene = preload("res://scenes/start.tscn")  
+var victory_scene = preload("res://scenes/victory.tscn")
+var defeat_scene = preload("res://scenes/victory.tscn")  
 
 var images_vida = [
 	preload("res://assets/ui/VIDA1.png"),  
