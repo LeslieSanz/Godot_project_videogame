@@ -22,9 +22,9 @@ tracks/0/keys = {
 "values": [ Vector2( 749.718, 446.695 ), Vector2( 755, 446.695 ) ]
 }
 
-[sub_resource type="StyleBoxEmpty" id=5]
+[sub_resource type="StyleBoxEmpty" id=2]
 
-[sub_resource type="StyleBoxEmpty" id=6]
+[sub_resource type="StyleBoxEmpty" id=3]
 
 [sub_resource type="Animation" id=4]
 length = 2.0
@@ -149,8 +149,8 @@ margin_left = 336.0
 margin_top = 450.0
 margin_right = 474.0
 margin_bottom = 505.0
-custom_styles/hover = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
 icon = ExtResource( 6 )
 expand_icon = true
 __meta__ = {
