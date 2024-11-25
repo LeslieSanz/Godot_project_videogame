@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/startLevel3.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/personaje1.png" type="Texture" id=2]
@@ -21,6 +21,8 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 749.718, 446.695 ), Vector2( 755, 446.695 ) ]
 }
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -148,6 +150,7 @@ margin_left = 336.0
 margin_top = 450.0
 margin_right = 474.0
 margin_bottom = 505.0
+custom_styles/hover = SubResource( 4 )
 custom_styles/normal = SubResource( 2 )
 icon = ExtResource( 5 )
 expand_icon = true

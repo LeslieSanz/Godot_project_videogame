@@ -5,18 +5,18 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "animation"
-length = 3.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
-tracks/0/loop_wrap = true
+tracks/0/loop_wrap = false
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.5, 3, 4.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 890, 302.984 ), Vector2( -228.332, 308.093 ) ]
+"values": [ Vector2( 890, 211 ), Vector2( 330.834, 211 ), Vector2( 630.198, 211 ), Vector2( 300, 211 ), Vector2( 640, 211 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -29,7 +29,7 @@ extents = Vector2( 94.9387, 66.4973 )
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
-position = Vector2( -228.332, 308.093 )
+position = Vector2( 640, 211 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 1 )
 __meta__ = {
