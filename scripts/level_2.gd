@@ -12,14 +12,14 @@ func _on_Timer_timeout():
 	if randomEnemy == 1:
 		var enemyShip = pre_enemyShip.instance()
 		self.call_deferred("add_child",enemyShip)
-		enemyShip.position.y = round(rand_range(0,400))
-		enemyShip.add_to_group("Enemy2")
+		enemyShip.position.y = round(rand_range(250,400))
+		enemyShip.add_to_group("enemy")
 		
 	if randomEnemy == 2:
 		var asteroid = pre_asteroid.instance()
 		self.call_deferred("add_child",asteroid)
-		asteroid.position.y = round(rand_range(0,400))
-		asteroid.add_to_group("Enemy1")
+		asteroid.position.y = round(rand_range(0,250))
+		asteroid.add_to_group("enemy")
 
 func _physics_process(delta):
 	$hud/vidasValor.text = str(Global.vidas)
