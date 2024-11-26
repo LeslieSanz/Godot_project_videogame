@@ -9,26 +9,10 @@
 [ext_resource path="res://assets/ui/tablero2.png" type="Texture" id=7]
 [ext_resource path="res://sounds/Sinfona_peruana.wav" type="AudioStream" id=8]
 [ext_resource path="res://fuentetexto.tres" type="DynamicFont" id=9]
+[ext_resource path="res://scenesmensaje.tres" type="Animation" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 397.965, 11.242 )
-
-[sub_resource type="Animation" id=2]
-resource_name = "mensaje"
-length = 5.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -149.003, 217.556 ), Vector2( 650.997, 217.556 ) ]
-}
 
 [node name="level_3" type="Node2D"]
 script = ExtResource( 3 )
@@ -82,15 +66,15 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="tablerito3" type="Sprite" parent="hud"]
-position = Vector2( 92.8072, 467.006 )
-scale = Vector2( 0.539898, 0.44531 )
-texture = ExtResource( 5 )
-
 [node name="tablerito2" type="Sprite" parent="hud"]
 position = Vector2( 139.956, 33.5932 )
 scale = Vector2( 0.391914, 0.348235 )
 texture = ExtResource( 6 )
+
+[node name="tablerito3" type="Sprite" parent="hud"]
+position = Vector2( 92.8072, 467.006 )
+scale = Vector2( 0.539898, 0.44531 )
+texture = ExtResource( 5 )
 
 [node name="puntos" type="Label" parent="hud"]
 margin_left = 645.715
@@ -123,7 +107,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="hud/Label"]
 autoplay = "mensaje"
-anims/mensaje = SubResource( 2 )
+anims/mensaje = ExtResource( 10 )
 
 [node name="Timer2" type="Timer" parent="hud"]
 wait_time = 5.0

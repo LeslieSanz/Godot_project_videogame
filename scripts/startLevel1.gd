@@ -18,7 +18,7 @@ var iniciobutton = false
 var text_speed = 0.01
 
 #variable de cambio de escena
-var change_scene = preload("res://scenes/startLevel2.tscn")
+var change_scene = preload("res://scenes/level_1.tscn")
 
 func _ready():
 	$descripcion.text = ''

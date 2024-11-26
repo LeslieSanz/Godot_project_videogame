@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/objects.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/level 1/enemy1.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "animation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 859.5, 96.205 ), Vector2( 471, 173.205 ), Vector2( 187.2, 116.442 ), Vector2( 317.414, 112.821 ), Vector2( 414.165, 142.662 ), Vector2( 633.478, 123.658 ), Vector2( 485.332, 161.965 ), Vector2( 317.208, 127.354 ), Vector2( 265.951, 199.123 ), Vector2( 235.672, 136.044 ), Vector2( 363.028, 173.502 ), Vector2( 494.879, 140.539 ), Vector2( 685.164, 192.98 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 237.646, 139.144 )
+
+[node name="enemyShip" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 859.5, 96.205 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+autoplay = "animation"
+anims/animation = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Sprite" groups=[
+"enemy",
+"enemyShip",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2( -9.25977, 7.93701 )
+shape = SubResource( 2 )
+[connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]

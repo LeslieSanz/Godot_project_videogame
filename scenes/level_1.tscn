@@ -1,20 +1,18 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://sounds/explosion.wav" type="AudioStream" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/level_1.gd" type="Script" id=3]
 [ext_resource path="res://assets/backgrounds/rotonda.png" type="Texture" id=4]
-[ext_resource path="res://fonts/ARCADE_R.TTF" type="DynamicFontData" id=5]
-[ext_resource path="res://assets/ui/ban_vidas.png" type="Texture" id=6]
-[ext_resource path="res://assets/ui/ban.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/tablero1.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/VIDA5.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/tablero2.png" type="Texture" id=7]
 [ext_resource path="res://sounds/condor_pasa.wav" type="AudioStream" id=8]
+[ext_resource path="res://fuentetexto.tres" type="DynamicFont" id=9]
+[ext_resource path="res://scenesmensaje.tres" type="Animation" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 397.965, 11.242 )
-
-[sub_resource type="DynamicFont" id=2]
-use_filter = true
-font_data = ExtResource( 5 )
 
 [node name="level_1" type="Node2D"]
 script = ExtResource( 3 )
@@ -23,6 +21,7 @@ script = ExtResource( 3 )
 position = Vector2( 118.106, 201.602 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
 [node name="limits" type="Node2D" parent="."]
@@ -62,59 +61,83 @@ texture = ExtResource( 4 )
 [node name="hud" type="Node2D" parent="."]
 
 [node name="tablerito" type="Sprite" parent="hud"]
-position = Vector2( 642.885, 60.3754 )
-scale = Vector2( 1.93955, 1.38525 )
+position = Vector2( 700.155, 40.826 )
+scale = Vector2( 0.623, 0.445 )
 texture = ExtResource( 7 )
 
 [node name="tablerito2" type="Sprite" parent="hud"]
-position = Vector2( 128.474, 64.3869 )
-scale = Vector2( 1.21538, 0.865324 )
+position = Vector2( 139.956, 33.593 )
+scale = Vector2( 0.392, 0.348 )
 texture = ExtResource( 6 )
 
+[node name="tablerito3" type="Sprite" parent="hud"]
+position = Vector2( 92.807, 467.006 )
+scale = Vector2( 0.54, 0.445 )
+texture = ExtResource( 5 )
+
 [node name="puntos" type="Label" parent="hud"]
-margin_left = 576.081
-margin_top = 52.4822
-margin_right = 702.081
-margin_bottom = 93.4822
-custom_fonts/font = SubResource( 2 )
+margin_left = 645.715
+margin_top = 30.495
+margin_right = 771.715
+margin_bottom = 71.495
+custom_fonts/font = ExtResource( 9 )
 text = "Puntos:
 "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="vidas" type="Label" parent="hud"]
-margin_left = 70.7152
-margin_top = 51.86
-margin_right = 196.715
-margin_bottom = 88.86
-custom_fonts/font = SubResource( 2 )
-text = "Vidas:
+[node name="nivel" type="Label" parent="hud"]
+margin_left = 61.335
+margin_top = 456.674
+margin_right = 187.335
+margin_bottom = 497.674
+custom_fonts/font = ExtResource( 9 )
+text = "NIVEL 2
 "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="hud"]
+margin_left = 365.362
+margin_top = 217.556
+margin_right = 663.354
+margin_bottom = 256.556
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hud/Label"]
+anims/scenesmensaje = ExtResource( 10 )
+
+[node name="Timer2" type="Timer" parent="hud"]
+wait_time = 5.0
+
 [node name="puntosValor" type="Label" parent="hud"]
-margin_left = 691.326
-margin_top = 52.7194
-margin_right = 721.326
-margin_bottom = 74.7194
-custom_fonts/font = SubResource( 2 )
+margin_left = 709.306
+margin_top = 30.994
+margin_right = 739.306
+margin_bottom = 52.994
+custom_fonts/font = ExtResource( 9 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="vidasValor" type="Label" parent="hud"]
-margin_left = 170.78
-margin_top = 51.7756
-margin_right = 200.78
-margin_bottom = 73.7756
-custom_fonts/font = SubResource( 2 )
+margin_left = 148.0
+margin_top = 25.0
+margin_right = 178.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 9 )
 text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="hud/Timer2" to="." method="_on_Timer2_timeout"]

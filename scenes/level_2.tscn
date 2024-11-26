@@ -7,7 +7,7 @@
 [ext_resource path="res://fonts/ARCADE_R.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/ui/ban_vidas.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/ban.png" type="Texture" id=7]
-[ext_resource path="res://assets/AudioLVL2/TRACK1.mp3" type="AudioStream" id=8]
+[ext_resource path="res://sounds/TRACK1.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 397.965, 11.242 )
@@ -116,5 +116,4 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
