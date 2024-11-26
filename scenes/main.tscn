@@ -1,11 +1,22 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://fonts/ARCADE_I.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/backgrounds/start.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/personaje1.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/image1.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/buttons/viajaralpasado.png" type="Texture" id=4]
 [ext_resource path="res://fuentetexto.tres" type="DynamicFont" id=5]
 [ext_resource path="res://scripts/main.gd" type="Script" id=6]
+[ext_resource path="res://assets/sprites/image4.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/image3.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/image2.png" type="Texture" id=9]
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Ely",
+"speed": 2.0
+} ]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -79,18 +90,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 51.6738
-margin_top = 284.044
-margin_right = 180.674
-margin_bottom = 501.044
-texture = ExtResource( 3 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 150.41, 342.228 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 13 )
+animation = "Ely"
+frame = 3
+playing = true
 
 [node name="titulo" type="Label" parent="."]
 anchor_left = 0.5
