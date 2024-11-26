@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/sprites/level 3/soldado4.png" type="Texture" id=1]
-[ext_resource path="res://scripts/objects2.gd" type="Script" id=2]
+[ext_resource path="res://scripts/objects.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/level 3/soldado3.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/level 3/soldado2.png" type="Texture" id=4]
 
@@ -35,19 +35,16 @@ tracks/0/keys = {
 [node name="soldier" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 525.456, 216.161 )
+[node name="sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 851.448, 176.051 )
 scale = Vector2( 0.8, 0.8 )
 frames = SubResource( 1 )
 animation = "soldado"
-frame = 3
+frame = 2
 playing = true
 offset = Vector2( 0.5, 0.5 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="Area2D" type="Area2D" parent="AnimatedSprite" groups=[
+[node name="Area2D" type="Area2D" parent="sprite" groups=[
 "enemy",
 "enemyShip",
 ]]
@@ -55,18 +52,18 @@ position = Vector2( 0.0937042, 1.45721 )
 scale = Vector2( 0.625, 0.625 )
 gravity_vec = Vector2( 0, 0 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/Area2D"]
 position = Vector2( 0, 13.454 )
 shape = SubResource( 2 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sprite"]
 autoplay = "soldado"
 anims/soldado = SubResource( 3 )
 
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 408.708, 111.723 )
+[node name="Position2D" type="Position2D" parent="sprite"]
+position = Vector2( -41.1583, -25.8424 )
+scale = Vector2( 1.25, 1.25 )
 
 [node name="Timer" type="Timer" parent="."]
-
-[connection signal="area_entered" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="sprite/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

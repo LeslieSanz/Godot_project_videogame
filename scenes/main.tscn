@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/sprites/image3.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/image2.png" type="Texture" id=9]
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ) ],
 "loop": true,
@@ -18,11 +18,9 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 50
 font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
@@ -32,7 +30,9 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxEmpty" id=6]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="Animation" id=8]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -48,15 +48,15 @@ tracks/0/keys = {
 "values": [ Vector2( 129, 41 ), Vector2( 129, 50 ), Vector2( 129, 55 ), Vector2( 138, 55 ) ]
 }
 
-[sub_resource type="StyleBoxEmpty" id=8]
-
 [sub_resource type="StyleBoxEmpty" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=10]
 
 [sub_resource type="StyleBoxEmpty" id=11]
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="Animation" id=13]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -93,9 +93,9 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 150.41, 342.228 )
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 13 )
+frames = SubResource( 1 )
 animation = "Ely"
-frame = 2
+frame = 3
 playing = true
 
 [node name="titulo" type="Label" parent="."]
@@ -106,7 +106,7 @@ anchor_bottom = 1.0
 margin_top = 133.388
 margin_right = 800.0
 margin_bottom = 184.388
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 1
 __meta__ = {
@@ -120,11 +120,11 @@ margin_left = 582.942
 margin_top = 240.1
 margin_right = 720.942
 margin_bottom = 295.1
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 4 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
 icon = ExtResource( 4 )
 expand_icon = true
 __meta__ = {
@@ -151,18 +151,18 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Button"]
 autoplay = "button"
-anims/button = SubResource( 7 )
+anims/button = SubResource( 8 )
 
 [node name="Button2" type="Button" parent="."]
 margin_left = 581.819
 margin_top = 301.835
 margin_right = 719.819
 margin_bottom = 356.835
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 7 )
 icon = ExtResource( 4 )
 expand_icon = true
 __meta__ = {
@@ -189,7 +189,7 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Button2"]
 autoplay = "button"
-anims/button = SubResource( 12 )
+anims/button = SubResource( 13 )
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

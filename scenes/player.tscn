@@ -6,10 +6,10 @@
 [ext_resource path="res://sounds/shoot.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 58.4377, 23.4745 )
+extents = Vector2( 50.0604, 22.0023 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 59.4352, 30.6294 )
+extents = Vector2( 51.355, 21.1066 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -38,5 +38,4 @@ stream = ExtResource( 4 )
 
 [node name="shipImpact" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 3 )
-
 [connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]

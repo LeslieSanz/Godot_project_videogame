@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/sprites/level 3/cañon.png" type="Texture" id=1]
-[ext_resource path="res://scripts/objects2.gd" type="Script" id=2]
+[ext_resource path="res://scripts/objects.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "animation"
@@ -29,7 +29,7 @@ extents = Vector2( 94.9387, 66.4973 )
 script = ExtResource( 2 )
 
 [node name="sprite" type="Sprite" parent="."]
-position = Vector2( 640, 211 )
+position = Vector2( 890, 211 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -49,12 +49,12 @@ anims/animation = SubResource( 1 )
 position = Vector2( 2.38381, -4.36998 )
 shape = SubResource( 2 )
 
+[node name="Position2D" type="Position2D" parent="sprite"]
+position = Vector2( -85.9159, -45.9647 )
+scale = Vector2( 1.66667, 1.66667 )
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
-
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 483.661, 86.267 )
-
 [connection signal="area_entered" from="sprite/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

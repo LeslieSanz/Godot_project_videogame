@@ -6,7 +6,7 @@ export (int) var enemy_speed = 40  # Velocidad de movimiento del enemigo
 
 # Referencias a nodos
 onready var timer = $Timer  # Nodo Timer para controlar el disparo
-onready var shoot_position = $Position2D  # Nodo Position2D para la posición inicial del disparo
+onready var shoot_position = $sprite/Position2D  # Nodo Position2D para la posición inicial del disparo
 
 func _ready():
 	# Configura el Timer para disparar solo una vez
@@ -18,10 +18,10 @@ func _physics_process(delta):
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("bullet"):  # Detectar colisión con balas del jugador
+		Global.puntos += 5
 		# Notificar al nodo principal que un enemigo fue derrotado
 		get_parent().call_deferred("enemy_defeated")
-		Global.puntos += 5  # Incrementar puntos
-		queue_free()  # Eliminar al enemigo
+		queue_free()
 
 func _on_Timer_timeout():
 	# Crear la bala y posicionarla
