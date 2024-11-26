@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	$Node2D/AudioStreamPlayer.seek(3)
 	$titulo.text = Global.titulo
 	
 func _process(delta):

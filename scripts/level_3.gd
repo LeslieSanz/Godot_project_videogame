@@ -3,7 +3,7 @@ extends Node2D
 var pre_enemyArmy = preload("res://scenes/enemies/soldier.tscn")
 var pre_canyon = preload("res://scenes/enemies/canyon.tscn")
 
-var total_enemies = 20  # Número total de enemigos
+var total_enemies = 15  # Número total de enemigos
 var enemies_spawned = 0  # Enemigos generados
 var enemies_defeated = 0  # Enemigos derrotados
 var dialog_index = 0

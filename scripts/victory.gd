@@ -22,6 +22,7 @@ func _ready():
 	# Configurar la descripción e imagen inicial
 	$descripcion.text = ''
 	$TextureRect2.texture = null
+	$Node2D/AudioStreamPlayer.seek(3)
 	load_dialog()  # Iniciar el diálogo
 
 

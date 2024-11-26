@@ -66,6 +66,7 @@ func _physics_process(delta):
 func _ready():
 	$music/level_1_music.play()
 	$hud/tablerito2.texture = null
+	$music/level_1_music.seek(10)
 	print("Enemigos derrotados: ", enemies_defeated)
 
 

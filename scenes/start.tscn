@@ -193,6 +193,7 @@ anims/button = SubResource( 7 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D"]
 pause_mode = 2
 stream = ExtResource( 7 )
+volume_db = 15.0
 autoplay = true
 
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

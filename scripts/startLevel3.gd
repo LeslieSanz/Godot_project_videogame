@@ -23,6 +23,7 @@ var change_scene = preload("res://scenes/level_3.tscn")
 func _ready():
 	$descripcion.text = ''
 	$TextureRect2.texture = null
+	$Node2D/AudioStreamPlayer.seek(10)
 	load_dialog()
 
 func _process(delta):
