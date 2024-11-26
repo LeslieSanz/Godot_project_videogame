@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://fonts/ARCADE_I.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/backgrounds/start.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/sprites/image4.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/image3.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/image2.png" type="Texture" id=9]
+[ext_resource path="res://assets/Audio/INICIO.wav" type="AudioStream" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -95,7 +96,6 @@ position = Vector2( 150.41, 342.228 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 1 )
 animation = "Ely"
-frame = 3
 playing = true
 
 [node name="titulo" type="Label" parent="."]
@@ -190,6 +190,14 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Button2"]
 autoplay = "button"
 anims/button = SubResource( 13 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D"]
+pause_mode = 2
+stream = ExtResource( 10 )
+autoplay = true
+
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
