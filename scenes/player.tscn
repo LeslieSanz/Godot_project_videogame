@@ -38,4 +38,5 @@ stream = ExtResource( 4 )
 
 [node name="shipImpact" type="AudioStreamPlayer" parent="sounds"]
 stream = ExtResource( 3 )
+
 [connection signal="area_entered" from="Sprite/Area2D" to="." method="_on_Area2D_area_entered"]
