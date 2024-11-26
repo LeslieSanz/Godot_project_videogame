@@ -3,7 +3,7 @@ extends Node2D
 var pre_enemyShip = preload("res://scenes/LEVEL2Enemy/Enemy2.tscn")
 var pre_asteroid = preload("res://scenes/LEVEL2Enemy/Enemy1.tscn")
 
-var total_enemies = 3  # Número total de enemigos
+var total_enemies = 10  # Número total de enemigos
 var enemies_spawned = 0  # Enemigos generados
 var enemies_defeated = 0  # Enemigos derrotados
 var dialog_index = 0
@@ -56,7 +56,6 @@ func _physics_process(delta):
 	
 	# Verifica si el jugador ha derrotado a todos los enemigos
 	if enemies_defeated >= total_enemies and Global.vidas > 0:
-		print("hola")
 		show_message("¡Victoria! Has derrotado a todos los enemigos.", "win_game")
 		
 	# Verifica si el jugador ha perdido todas las vidas
@@ -98,8 +97,6 @@ func show_message(text, action):
 # Llamar a esta función cuando un enemigo sea derrotado
 func enemy_defeated():
 	enemies_defeated += 1
-	print("Enemigos derrotados: ", enemies_defeated)
-	
 
 
 # Función para manejar el temporizador Timer2

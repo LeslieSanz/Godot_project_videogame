@@ -9,6 +9,15 @@ func _process(delta):
 	$Button/Label.text = Global.boton
 
 func _on_Button_pressed():
+	# Reiniciar variables globales
+	Global.vidas = 5
+	Global.puntos = 0
+	
+	# Reiniciar título y botón
+	Global.titulo = "CronoLibertador"
+	Global.boton = "EMPEZAR A JUGAR"
+	
+	# Cambiar a la escena inicial
 	get_tree().change_scene("res://scenes/start.tscn")
 
 func _on_Button2_pressed():

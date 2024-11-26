@@ -21,6 +21,7 @@ script = ExtResource( 3 )
 position = Vector2( 118.106, 201.602 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
 [node name="limits" type="Node2D" parent="."]
@@ -137,6 +138,5 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="hud/Timer2" to="." method="_on_Timer2_timeout"]

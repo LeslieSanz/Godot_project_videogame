@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/sprites/personaje1.png" type="Texture" id=1]
 [ext_resource path="res://assets/backgrounds/start.png" type="Texture" id=2]
@@ -24,8 +24,15 @@ tracks/0/keys = {
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-[sub_resource type="Animation" id=3]
-resource_name = "button"
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="Animation" id=7]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -101,7 +108,7 @@ margin_left = 28.0
 margin_top = 382.693
 margin_right = 111.0
 margin_bottom = 396.693
-text = "Name"
+text = "Ely"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -149,7 +156,11 @@ margin_left = 336.0
 margin_top = 450.0
 margin_right = 474.0
 margin_bottom = 505.0
-custom_styles/normal = SubResource( 2 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 icon = ExtResource( 6 )
 expand_icon = true
 __meta__ = {
@@ -174,6 +185,6 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Button"]
 autoplay = "button"
-anims/button = SubResource( 3 )
+anims/button = SubResource( 7 )
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

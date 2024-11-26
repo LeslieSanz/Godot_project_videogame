@@ -3,7 +3,7 @@ extends Node2D
 var pre_enemyShip = preload("res://scenes/LEVEL1Enemy/enemyShip.tscn")
 var pre_asteroid = preload("res://scenes/LEVEL1Enemy/asteroid.tscn")
 
-var total_enemies = 3  # Número total de enemigos
+var total_enemies = 5  # Número total de enemigos
 var enemies_spawned = 0  # Enemigos generados
 var enemies_defeated = 0  # Enemigos derrotados
 var dialog_index = 0
