@@ -125,6 +125,9 @@ __meta__ = {
 autoplay = "mensaje"
 anims/mensaje = SubResource( 2 )
 
+[node name="Timer2" type="Timer" parent="hud"]
+wait_time = 5.0
+
 [node name="nivel" type="Label" parent="hud"]
 margin_left = 61.3353
 margin_top = 456.674
@@ -159,5 +162,5 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="hud/Timer2" to="." method="_on_Timer2_timeout"]
