@@ -1,0 +1,17 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "animation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 859.5, 96.205 ), Vector2( 471, 173.205 ), Vector2( 187.2, 116.442 ), Vector2( 317.414, 112.821 ), Vector2( 414.165, 142.662 ), Vector2( 633.478, 123.658 ), Vector2( 485.332, 161.965 ), Vector2( 317.208, 127.354 ), Vector2( 265.951, 199.123 ), Vector2( 235.672, 136.044 ), Vector2( 363.028, 173.502 ), Vector2( 494.879, 140.539 ), Vector2( 685.164, 192.98 ) ]
+}
