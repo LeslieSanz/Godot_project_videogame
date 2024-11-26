@@ -89,9 +89,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="hud"]
 margin_left = -149.003
-margin_top = 217.556
+margin_top = 267.556
 margin_right = 149.001
-margin_bottom = 256.556
+margin_bottom = 306.556
 custom_fonts/font = ExtResource( 9 )
 align = 1
 __meta__ = {

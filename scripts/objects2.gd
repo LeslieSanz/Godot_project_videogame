@@ -9,9 +9,8 @@ onready var timer = $Timer  # Nodo Timer para controlar el disparo
 onready var shoot_position = $sprite/Position2D  # Nodo Position2D para la posición inicial del disparo
 
 func _ready():
-	# Configura el Timer para disparar solo una vez
-	timer.connect("timeout", self, "_on_Timer_timeout")  # Asegúrate de conectar la señal
-	timer.start()  # Inicia el Timer para disparar una sola vez
+	# Iniciar el Timer, ya no lo detenemos después del primer disparo
+	timer.start()  # Inicia el Timer para disparar repetidamente
 
 func _physics_process(delta):
 	position.x -= enemy_speed * delta  # Movimiento hacia la izquierda
@@ -29,5 +28,5 @@ func _on_Timer_timeout():
 	BalaInstance.global_position = shoot_position.global_position + Vector2(20, 0)  # Ajusta el desplazamiento inicial
 	add_child(BalaInstance)  # Añade la bala como hija del enemigo para que se mueva con él
 	
-	# Detener el Timer después de disparar una vez
-	timer.stop()  # Detiene el temporizador para que no dispare más
+	# Reiniciar el Timer después de disparar
+	timer.start()  # Reinicia el temporizador para que dispare nuevamente

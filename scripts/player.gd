@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 var velocity = Vector2.ZERO
 const SPEED = 200
-var readyToShoot = true		
+var readyToShoot = true  # Permitir disparar solo cuando esté listo
 
-var pre_bullet = preload("res://scenes/bullet.tscn")
+var pre_bullet = preload("res://scenes/bullet.tscn")  # Cargar la bala
 
 const SCREEN_SIZE = Vector2(800, 500)  # Tamaño de la pantalla
 
@@ -44,16 +44,16 @@ func _physics_process(delta):
 func shoot():
 	if readyToShoot:
 		# Instanciar la bala
-		var bullet = pre_bullet.instance()
-		get_parent().add_child(bullet)  # Agregar al nodo padre
+		var bullet_instance = pre_bullet.instance()
+		get_parent().add_child(bullet_instance)  # Agregar al nodo padre
 		
-		# Establecer posición inicial de la bala
-		bullet.position = position
+		# Establecer posición inicial de la bala (por ejemplo, en el frente del jugador)
+		bullet_instance.position = position + Vector2(20, 0)  # Ajusta según la orientación
 		
 		# Bloquear disparo temporalmente
 		readyToShoot = false
 		
-		$sounds/laser.play()
+		$sounds/laser.play()  # Reproducir sonido de disparo
 		# Reanudar disparo después de 1 segundo
 		yield(get_tree().create_timer(1), "timeout")
 		readyToShoot = true
@@ -67,3 +67,4 @@ func _on_Area2D_area_entered(area):
 		$sounds/shipImpact.play()
 		if Global.vidas > 0:
 			Global.vidas -= 1
+

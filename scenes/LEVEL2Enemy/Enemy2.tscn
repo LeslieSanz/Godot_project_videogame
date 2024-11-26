@@ -29,9 +29,6 @@ script = ExtResource( 2 )
 position = Vector2( 898.409, 262.607 )
 scale = Vector2( 0.160056, 0.176791 )
 texture = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="sprite"]
 autoplay = "animation"
@@ -51,7 +48,6 @@ shape = SubResource( 2 )
 position = Vector2( -531.351, -13.202 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 autostart = true
 [connection signal="area_entered" from="sprite/Area2D" to="." method="_on_Area2D_area_entered"]

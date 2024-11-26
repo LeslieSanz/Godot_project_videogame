@@ -54,7 +54,6 @@ position = Vector2( -85.9159, -45.9647 )
 scale = Vector2( 1.66667, 1.66667 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
 autostart = true
 [connection signal="area_entered" from="sprite/Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

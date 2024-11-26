@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scripts/objects.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/level 1/enemy1.png" type="Texture" id=2]
+[ext_resource path="res://scripts/objects2.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "animation"
@@ -13,25 +13,22 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 859.5, 96.205 ), Vector2( 471, 173.205 ), Vector2( 187.2, 116.442 ), Vector2( 317.414, 112.821 ), Vector2( 414.165, 142.662 ), Vector2( 633.478, 123.658 ), Vector2( 485.332, 161.965 ), Vector2( 317.208, 127.354 ), Vector2( 265.951, 199.123 ), Vector2( 235.672, 136.044 ), Vector2( 363.028, 173.502 ), Vector2( 494.879, 140.539 ), Vector2( 685.164, 192.98 ) ]
+"values": [ Vector2( 881.934, 172.798 ), Vector2( 602.756, 164.389 ), Vector2( 453.077, 224.934 ), Vector2( 300.034, 209.798 ), Vector2( 454.758, 238.388 ), Vector2( 609.483, 209.798 ), Vector2( 374.032, 250.161 ) ]
 }
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 237.646, 139.144 )
+extents = Vector2( 202.923, 112.599 )
 
 [node name="enemyShip" type="Node2D"]
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="sprite" type="Sprite" parent="."]
-position = Vector2( 859.5, 96.205 )
+position = Vector2( 881.934, 172.798 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="sprite"]
 autoplay = "animation"
@@ -43,15 +40,14 @@ anims/animation = SubResource( 1 )
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/Area2D"]
-position = Vector2( -9.25977, 7.93701 )
+position = Vector2( -31.3084, 11.0869 )
 shape = SubResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="sprite"]
-position = Vector2( -230.573, 1.02075 )
-scale = Vector2( 3.33333, 3.33333 )
+position = Vector2( -236.25, 2.91663 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 autostart = true
 [connection signal="area_entered" from="sprite/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
