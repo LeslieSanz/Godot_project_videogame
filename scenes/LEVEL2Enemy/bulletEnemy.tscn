@@ -9,7 +9,7 @@ extents = Vector2( 9.6191, 4.35472 )
 extents = Vector2( 9.56638, 3.3165 )
 
 [node name="bullet" type="Node2D"]
-position = Vector2( 515.765, 199.925 )
+position = Vector2( -1.23499, -10.075 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( -12.9078, 4.24269 )
@@ -32,7 +32,7 @@ shape = SubResource( 1 )
 [node name="Area2D" type="Area2D" parent="KinematicBody2D" groups=[
 "bullet2",
 ]]
-position = Vector2( 6.30673, 1.03146 )
+position = Vector2( 2.30673, 1.03146 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Area2D" groups=[
 "bullet2",

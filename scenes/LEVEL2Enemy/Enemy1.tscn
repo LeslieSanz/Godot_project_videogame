@@ -34,11 +34,11 @@ one_shot = true
 autostart = true
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 556.199, 116.621 )
+position = Vector2( 595.793, 77.2985 )
 scale = Vector2( 0.0993626, 0.115574 )
 
 [node name="sprite" type="Sprite" parent="."]
-position = Vector2( 653.68, 208.918 )
+position = Vector2( 910.28, 263.299 )
 scale = Vector2( 0.0993626, 0.115574 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -58,5 +58,6 @@ position = Vector2( 4.30811, 7.7998 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sprite/Area2D"]
 position = Vector2( 13.9619, -7.28369 )
 shape = SubResource( 2 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="sprite/Area2D" to="." method="_on_Area2D_area_entered"]

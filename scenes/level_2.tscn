@@ -137,5 +137,6 @@ text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="hud/Timer2" to="." method="_on_Timer2_timeout"]

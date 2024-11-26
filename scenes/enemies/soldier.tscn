@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/sprites/level 3/soldado4.png" type="Texture" id=1]
-[ext_resource path="res://scripts/objects.gd" type="Script" id=2]
+[ext_resource path="res://scripts/objects2.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/level 3/soldado3.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/level 3/soldado2.png" type="Texture" id=4]
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 3 ) ],
 "loop": true,
@@ -16,7 +16,7 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 76.3504, 135.195 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "soldado"
 length = 6.0
 tracks/0/type = "value"
@@ -36,11 +36,11 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 500, 211.918 )
+position = Vector2( 525.456, 216.161 )
 scale = Vector2( 0.8, 0.8 )
-frames = SubResource( 4 )
+frames = SubResource( 1 )
 animation = "soldado"
-frame = 1
+frame = 3
 playing = true
 offset = Vector2( 0.5, 0.5 )
 __meta__ = {
@@ -61,5 +61,12 @@ shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
 autoplay = "soldado"
-anims/soldado = SubResource( 5 )
+anims/soldado = SubResource( 3 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 408.708, 111.723 )
+
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="area_entered" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
