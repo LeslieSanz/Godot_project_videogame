@@ -10,7 +10,7 @@ var dialog_index = 0
 
 # Escena de victoria y derrota
 var victory_scene = preload("res://scenes/victory.tscn")
-var defeat_scene = preload("res://scenes/victory.tscn")  
+var defeat_scene = preload("res://scenes/main.tscn")  
 
 var images_vida = [
 	preload("res://assets/ui/VIDA0.png"),  

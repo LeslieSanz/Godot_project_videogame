@@ -92,15 +92,15 @@ tracks/0/keys = {
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
 [sub_resource type="StyleBoxEmpty" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=7]
 
-[sub_resource type="StyleBoxEmpty" id=8]
-
-[sub_resource type="StyleBoxEmpty" id=4]
-
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=8]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -280,10 +280,10 @@ margin_top = 450.0
 margin_right = 465.0
 margin_bottom = 491.0
 custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 7 )
-custom_styles/disabled = SubResource( 8 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
 icon = ExtResource( 6 )
 expand_icon = true
 __meta__ = {
@@ -309,6 +309,6 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Button"]
 autoplay = "button"
-anims/button = SubResource( 5 )
+anims/button = SubResource( 8 )
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
