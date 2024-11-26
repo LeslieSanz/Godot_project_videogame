@@ -18,6 +18,8 @@ func _physics_process(delta):
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("bullet"):  # Detectar colisión con balas del jugador
+		# Notificar al nodo principal que un enemigo fue derrotado
+		get_parent().call_deferred("enemy_defeated")
 		Global.puntos += 5  # Incrementar puntos
 		queue_free()  # Eliminar al enemigo
 
