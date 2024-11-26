@@ -21,6 +21,8 @@ var images_vida = [
 	preload("res://assets/ui/VIDA5.png")    
 ]
 
+var next_scene = null
+
 #genera enemigos
 func _on_Timer_timeout():
 	if enemies_spawned < total_enemies:
@@ -64,13 +66,21 @@ func _ready():
 	
 func win_game():
 	# Cambiar a la escena de victoria
-	yield(get_tree().create_timer(5), "timeout")  # Espera 5 segundos
-	get_tree().change_scene_to(victory_scene)
+	if not $hud/Timer2.is_stopped():
+		return  # No reiniciar el temporizador si ya está corriendo
+	
+	next_scene = victory_scene
+	print("Iniciando Timer2 para victoria")
+	$hud/Timer2.start()
 	
 func lose_game():
 	# Cambiar a la escena de derrota
-	yield(get_tree().create_timer(5), "timeout")  # Espera 5 segundos
-	get_tree().change_scene_to(defeat_scene)
+	if not $hud/Timer2.is_stopped():
+		return  # No reiniciar el temporizador si ya está corriendo
+	
+	next_scene = defeat_scene
+	print("Iniciando Timer2 para derrota")
+	$hud/Timer2.start()
 	
 # Mostrar un mensaje y ejecutar una función después
 func show_message(text, action):
@@ -82,3 +92,10 @@ func show_message(text, action):
 # Llamar a esta función cuando un enemigo sea derrotado
 func enemy_defeated():
 	enemies_defeated += 1
+
+# Función para manejar el temporizador Timer2
+func _on_Timer2_timeout():
+	if next_scene != null:
+		get_tree().change_scene_to(next_scene)
+	else:
+		print("Error: next_scene es null.")
